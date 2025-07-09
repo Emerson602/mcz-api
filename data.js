@@ -1,6 +1,6 @@
 const data = [
   {
-    name: "Casa do caralho",
+    name: "Casa do baralho",
     nomeInfo: "Bem frequentado",
     openingHours: {
       Monday: '08:00 - 18:00',

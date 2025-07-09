@@ -20,7 +20,7 @@ app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
   // Autenticação fictícia
-  if (username === 'admin' && password === '1234') {
+  if (username === process.env.LOGIN && password === process.env.PASSWORD) {
     const token = jwt.sign({ username }, SECRET_KEY, { expiresIn: '1h' });
     return res.status(200).json({ token });
   }
