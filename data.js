@@ -1,15 +1,16 @@
 const data = [
   {
     name: "Casa do baralho",
-    nomeInfo: "Bem frequentado",
+    description: "Bem frequentado",
+    category: '',
     openingHours: {
-      Monday: '08:00 - 18:00',
-      Tuesday: '08:00 - 18:00',
-      Wednesday: '08:00 - 18:00',
-      Thursday: '08:00 - 18:00',
-      Friday: '08:00 - 18:00',
-      Saturday: '08:00 - 10:00',
-      Sunday: '08:00 - 10:00'
+      monday: '08:00 - 18:00',
+      tuesday: '08:00 - 18:00',
+      wednesday: '08:00 - 18:00',
+      thursday: '08:00 - 18:00',
+      friday: '08:00 - 18:00',
+      saturday: '08:00 - 10:00',
+      sunday: '08:00 - 10:00'
     },
     night: true,
     day: false,
