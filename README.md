@@ -1,5 +1,5 @@
 
-# 🌴 Explore MCZ API
+# 🌴 MCZ API
 
 API RESTful desenvolvida com **Node.js** e **Express** que fornece informações sobre locais para visitar em **Maceió (AL)**. A aplicação é protegida por autenticação JWT e atualmente oferece funcionalidades de login e listagem de locais cadastrados para frequentar.
 
