@@ -1,30 +1,32 @@
-# 📦 Explore MCZ API
 
-API RESTful feita com **Node.js** e **Express**, protegida por autenticação JWT. Fornece rotas para consultar locais disponíveis durante o dia, noite e busca por nome.
+# 🌴 Explore MCZ API
+
+API RESTful desenvolvida com **Node.js** e **Express** que fornece informações sobre locais para visitar em **Maceió (AL)**. A aplicação é protegida por autenticação JWT e atualmente oferece funcionalidades de login e listagem de locais cadastrados para frequentar.
 
 ---
 
 ## 🧰 Tecnologias Utilizadas
 
-- Node.js (com suporte a ES Modules)
+- Node.js (ES Modules)
 - Express
+- Prisma ORM
 - JWT (jsonwebtoken)
-- CORS
 - Dotenv
+- Cors
 - Nodemon (dev)
 
 ---
 
-## 🧾 Requisitos
+## ✅ Requisitos
 
-- ✅ Node.js (versão 16 ou superior recomendada)
-- ✅ npm (gerenciador de pacotes do Node)
+- Node.js v16+
+- npm (gerenciador de pacotes)
 
 ---
 
-## ⚙️ Instalação Rápida
+## ⚙️ Instalação
 
-Instale todas as dependências com o comando:
+Instale as dependências com:
 
 ```bash
 npm install
@@ -32,25 +34,9 @@ npm install
 
 ---
 
-## 📦 Instalação Manual (opcional)
-
-### Dependências principais:
-
-```bash
-npm install express cors dotenv jsonwebtoken
-```
-
-### Dependência de desenvolvimento (recarregamento automático):
-
-```bash
-npm install --save-dev nodemon
-```
-
----
-
 ## ▶️ Execução
 
-Para iniciar a aplicação com recarregamento automático via nodemon:
+Para iniciar o servidor em modo de desenvolvimento:
 
 ```bash
 npm run dev
@@ -60,22 +46,22 @@ npm run dev
 
 ## 🔐 Autenticação
 
-Esta API exige autenticação com JWT para acessar as rotas protegidas.
+A API utiliza **JWT** para proteger as rotas privadas.
 
 ### Login
 
-**POST /login**
+**POST** `/login`
 
-Corpo da requisição:
+Envie no corpo da requisição:
 
 ```json
 {
-  "username": "Usuario",
-  "password": "Senha"
+  "username": "admin",
+  "password": "suasenha"
 }
 ```
 
-Resposta:
+Se as credenciais estiverem corretas, o servidor retorna:
 
 ```json
 {
@@ -83,7 +69,7 @@ Resposta:
 }
 ```
 
-Use o token no header das requisições seguintes:
+Utilize esse token no header `Authorization` das requisições protegidas:
 
 ```
 Authorization: Bearer seu_token_jwt
@@ -91,39 +77,55 @@ Authorization: Bearer seu_token_jwt
 
 ---
 
-## 📡 Endpoints
+## 📡 Endpoints Disponíveis
 
-| Método | Rota            | Autenticado | Descrição                                  |
-|--------|------------------|-------------|--------------------------------------------|
-| POST   | `/login`         | ❌          | Retorna token JWT                          |
-| GET    | `/`              | ✅          | Retorna todos os dados                     |
-| GET    | `/name/:name`    | ✅          | Filtra dados pelo nome                     |
-| GET    | `/day`           | ✅          | Retorna apenas locais diurnos              |
-| GET    | `/night`         | ✅          | Retorna apenas locais noturnos             |
+### 🔓 Pública
+
+| Método | Rota     | Autenticação | Descrição                  |
+|--------|----------|---------------|----------------------------|
+| POST   | `/login` | ❌            | Gera um token de acesso    |
+
+### 🔐 Protegida
+
+| Método | Rota         | Autenticação | Descrição                                  |
+|--------|--------------|--------------|--------------------------------------------|
+| GET    | `/customers` | ✅            | Lista todos os locais cadastrados          |
 
 ---
 
-## 📁 Estrutura Esperada
+## 🧪 Variáveis de Ambiente
+
+Crie um arquivo `.env` na raiz com:
+
+```
+PORT=3000
+SECRET_KEY=sua_chave_secreta
+LOGIN=admin
+PASSWORD=senha_segura
+```
+
+---
+
+## 🗂️ Estrutura do Projeto
 
 ```
 ├── app.js
-├── data.js
 ├── .env
-├── .gitignore
 ├── package.json
+├── src
+│   ├── controllers
+│   ├── middlewares
+│   ├── prisma
+│   ├── routes
+│   └── useCases
 └── README.md
 ```
 
 ---
 
-## 🧪 Arquivo `.env` (exemplo)
+## 📌 Descrição Resumida
 
-Crie um arquivo `.env` na raiz do projeto com:
-
-```
-SECRET_KEY=sua_chave_secreta
-PORT=3000
-```
+Esta API tem como propósito **fornecer dados de lugares em Maceió** — como bares, pontos turísticos e estabelecimentos — permitindo que usuários autenticados consultem sugestões de locais para visitar.
 
 ---
 
