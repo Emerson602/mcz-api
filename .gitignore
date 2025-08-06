@@ -1,8 +1,4 @@
 node_modules/
-pages/
 .env
-index.html
 data.js
-listar.html
-cadastrar.html
 /generated/prisma

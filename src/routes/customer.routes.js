@@ -1,8 +1,5 @@
 import { Router } from 'express';
-import { CreateCustomerController } from '../controllers/CreateCustomerController.js';
-import { ListCustomersController } from '../controllers/ListCustomersController.js';
-import { UpdateCustomerController } from '../controllers/UpdateCustomerController.js';
-import { DeleteCustomerController } from '../controllers/DeleteCustomerController.js';
+import { ListCustomersController, CreateCustomerController, UpdateCustomerController, DeleteCustomerController } from '../controllers/CustomerController.js';
 import { authenticateToken } from '../middlewares/authenticateToken.js';
 
 const router = Router();

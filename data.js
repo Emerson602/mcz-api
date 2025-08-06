@@ -3,6 +3,8 @@ const data = [
     name: "Casa do baralho",
     description: "Bem frequentado",
     category: '',
+    likes: 0,
+    unlikes: 0,
     openingHours: {
       monday: '08:00 - 18:00',
       tuesday: '08:00 - 18:00',
